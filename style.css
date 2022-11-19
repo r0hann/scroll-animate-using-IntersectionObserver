@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+body {
+  background-color: #363646;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.hidden {
+  opacity: 0;
+  /* filter: blur(5px);
+  transform: translateX(-100%); */
+  transition: all 2s;
+}
+
+.logo-hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.logos {
+  width: 700px;
+  height: 150px;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.logo {
+  display: block;
+  position: relative;
+  perspective: 50rem;
+	-moz-perspective: 50rem;
+  height: 175px;
+}
+
+.logo-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+  transition: all 2s ease;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 20%);
+}
+
+.logo-front {
+  background-color: #535364;
+}
+
+.logo-back {
+  background-image: linear-gradient(to right bottom, #3b3b39, #a97cb3);
+  transform: rotateY(180deg);
+}
+
+.logo:hover .logo-front {
+  transform: rotateY(-180deg);
+}
+
+.logo:hover .logo-back {
+  transform: rotateY(0deg);
+}
+
+.logo:nth-child(2) {
+  transition-delay: 200ms;
+}
+.logo:nth-child(3) {
+  transition-delay: 400ms;
+  
+}
+.logo:nth-child(4) {
+  transition-delay: 600ms;
+
+}
+
+/* @media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+} */
